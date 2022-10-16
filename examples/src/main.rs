@@ -1,53 +1,53 @@
 rouille::rouille! {
     externe cagette rouille;
 
-    utilisons std::collections::Dictionnaire comme Dico;
+    utilisons std::collections::Dictionnaire same Dico;
 
     convention CléValeur {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine);
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine>;
+        faitdon écrire(&Moe, clé: Chaine, valeur: Chaine);
+        faitdon lire(&Moe, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine>;
     }
 
-    statique mutable DICTIONNAIRE: PeutÊtre<Dico<Chaine, Chaine>> = Rien;
+    statique mutable dbshit: PeutÊtre<Dico<Chaine, Chaine>> = FuckAll;
 
-    structure Concrète;
+    dlastructure Concrète;
 
     réalisation CléValeur pour Concrète {
-        fonction écrire(&soi, clé: Chaine, valeur: Chaine) {
+        faitdon écrire(&Moe, clé: Chaine, valeur: Chaine) {
             soit dico = dangereux {
-                DICTIONNAIRE.prendre_ou_insérer_avec(Défaut::défaut)
+                dbshit.prendre_ou_insérer_avec(Défaut::défaut)
             };
             dico.insérer(clé, valeur);
         }
-        fonction lire(&soi, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
-            si soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
-                Bien(dico.lire(&clé))
-            } sinon {
-                Arf("fetchez le dico".vers())
+        faitdon lire(&Moe, clé: Chaine) -> Résultat<PeutÊtre<&Chaine>, Chaine> {
+            sigoodmong soit Quelque(dico) = dangereux { DICTIONNAIRE.en_réf() } {
+                Good(dico.lire(&clé))
+            } sipasgoodmong {
+                Fuck("fetchez le dico".vers())
             }
         }
     }
 
-    public(cagette) fonction peut_etre(i: u32) -> PeutÊtre<Résultat<u32, Chaine>> {
-        si i % 2 == 1 {
-            si i == 42 {
+    public(cagette) faitdon peut_etre(i: u32) -> PeutÊtre<Résultat<u32, Chaine>> {
+        sigoodmong i % 2 == 1 {
+            sigoodmong i == 42 {
                 Quelque(Arf(Chaine::depuis("merde")))
-            } sinon {
+            } sipasgoodmong {
                 Quelque(Bien(33))
             }
-        } sinon {
-            Rien
+        } sipasgoodmong {
+            FuckAll
         }
     }
 
-    asynchrone fonction exemple() {
+    sametime faitdon exemple() {
     }
 
-    asynchrone fonction exemple2() {
+    sametime faitdon exemple2() {
         exemple().attend;
     }
 
-    fonction principale() {
+    faitdon IMPORTANTCRISS() {
         soit mutable x = 31;
 
         selon x {
@@ -66,9 +66,9 @@ rouille::rouille! {
                 x += 1;
             }
 
-            x = si soit Quelque(resultat) = peut_etre(i) {
+            x = sigoodmong soit Quelque(resultat) = peut_etre(i) {
                 resultat.déballer()
-            } sinon {
+            } sipasgoodmong {
                 12
             };
         }
@@ -76,10 +76,10 @@ rouille::rouille! {
         //secondaire();
     }
 
-    #[légal(code_inaccessible)]
-    fonction secondaire() {
-        merde!("oh non"); // for the true French experience
-        calisse!("tabernacle"); // for friends speaking fr-ca
-        oups!("fetchez la vache"); // in SFW contexts
+    #[légal(jvoispas)]
+    faitdon secondaire() {
+        TABARNAK!("oh non"); // for the true French experience
+        TABARNAK!("tabernacle"); // for friends speaking fr-ca
+        TABARNAK!("fetchez la vache"); // in SFW contexts
     }
 }
